@@ -18,6 +18,7 @@ namespace MulMatrixVector
             double[] pVector = new double[Size];
             double[] pResult = new double[Size];
             Calculation.RandomDataInitialization(ref pMatrix, ref pVector, Size);
+
             //multithread
             Console.WriteLine("Start Multithread Code");
             Stopwatch stopwatch = new Stopwatch();
@@ -25,7 +26,7 @@ namespace MulMatrixVector
             Calculation.ParallelResultCalculation(pMatrix, pVector, pResult);
             stopwatch.Stop();
             Console.WriteLine("End Multithread Code!!!");
-            Console.Error.WriteLine("Sequential loop time in milliseconds: {0}",
+            Console.WriteLine("Sequential loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
 
             stopwatch.Reset();
@@ -36,8 +37,11 @@ namespace MulMatrixVector
             Calculation.SerialResultCalculation(pMatrix, pVector, ref pResult, Calculation.size);
             stopwatch.Stop();
             Console.WriteLine("End Singlethread Code!!!");
-            Console.Error.WriteLine("Parallel loop time in milliseconds: {0}",
+            Console.WriteLine("Parallel loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
+
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }

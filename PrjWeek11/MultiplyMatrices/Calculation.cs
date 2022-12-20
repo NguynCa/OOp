@@ -10,7 +10,8 @@ namespace MultiplyMatrices
 {
     class Calculation
     {
-        #region Sequential_Loop
+
+        // Function for serial matrix-matrix multiplication
         public static void MultiplyMatricesSequential(double[,] matA, double[,] matB, double[,] result)
         {
             int matACols = matA.GetLength(1);
@@ -30,17 +31,14 @@ namespace MultiplyMatrices
                 }
             }
         }
-        #endregion
 
-        #region Parallel_Loop
+        // Function for parallel matrix-matrix multiplication
         public static void MultiplyMatricesParallel(double[,] matA, double[,] matB, double[,] result)
         {
             int matACols = matA.GetLength(1);
             int matBCols = matB.GetLength(1);
             int matARows = matA.GetLength(0);
 
-            // A basic matrix multiplication.
-            // Parallelize the outer loop to partition the source array by rows.
             Parallel.For(0, matARows, i =>
             {
                 for (int j = 0; j < matBCols; j++)
@@ -54,9 +52,8 @@ namespace MultiplyMatrices
                 }
             }); // Parallel.For
         }
-        #endregion
 
-        #region Helper_Methods
+        // Function for random definition of matrix and vector elements
         public static double[,] InitializeMatrix(int rows, int cols)
         {
             double[,] matrix = new double[rows, cols];
@@ -97,6 +94,5 @@ namespace MultiplyMatrices
                 }
             }
         }
-        #endregion
     }
 }

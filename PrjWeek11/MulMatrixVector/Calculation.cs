@@ -47,9 +47,6 @@ namespace MulMatrixVector
 					Console.WriteLine("Size of objects must be greater than 0");
 			}
 			while (Size <= 0);
-			//memory allocation
-
-			//PrintVector(pVector, Size);
 		}
 
 		// Function for parallel matrix-vector multiplication
@@ -64,7 +61,8 @@ namespace MulMatrixVector
 		}
 
 		// Function for serial matrix-vector multiplication
-		public static void SerialResultCalculation(double[] pMatrix, double[] pVector, ref double[] pResult, int Size)
+		public static void SerialResultCalculation(double[] pMatrix, double[] pVector, 
+			ref double[] pResult, int Size)
 		{
 			for (int i = 0; i < Size; i++)
 			{

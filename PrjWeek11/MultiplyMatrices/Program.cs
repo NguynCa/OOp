@@ -12,9 +12,6 @@ namespace MultiplyMatrices
     {
         static void Main(string[] args)
         {
-            // Set up matrices. Use small values to better view
-            // result matrix. Increase the counts to see greater
-            // speedup in the parallel loop vs. the sequential loop.
             int colCount = 180;
             int rowCount = 5000;
             int colCount2 = 1;
@@ -22,14 +19,15 @@ namespace MultiplyMatrices
             double[,] m2 = Calculation.InitializeMatrix(colCount, colCount2);
             double[,] result = new double[rowCount, colCount2];
 
-            // First do the sequential version.
-            Console.Error.WriteLine("Executing sequential loop...");
+            //Singlethread
+            Console.WriteLine("Start Singlethread Code");
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
             Calculation.MultiplyMatricesSequential(m1, m2, result);
             stopwatch.Stop();
-            Console.Error.WriteLine("Sequential loop time in milliseconds: {0}",
+            Console.WriteLine("Stop Singlethread Code");
+            Console.WriteLine("Sequential loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
 
             // For the skeptics.
@@ -39,17 +37,18 @@ namespace MultiplyMatrices
             stopwatch.Reset();
             result = new double[rowCount, colCount2];
 
-            // Do the parallel loop.
-            Console.Error.WriteLine("Executing parallel loop...");
+            //Multithread
+            Console.WriteLine("Executing parallel loop...");
             stopwatch.Start();
             Calculation.MultiplyMatricesParallel(m1, m2, result);
             stopwatch.Stop();
-            Console.Error.WriteLine("Parallel loop time in milliseconds: {0}",
+            Console.WriteLine("Stop Multythread Code");
+            Console.WriteLine("Parallel loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
             Calculation.OfferToPrint(rowCount, colCount2, result);
 
             // Keep the console window open in debug mode.
-            Console.Error.WriteLine("Press any key to exit.");
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }
