@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace Fibonacci
 {
     class Program
@@ -29,14 +30,16 @@ namespace Fibonacci
             //sequence
             startTime = DateTime.Now;
             Console.WriteLine("Start Singlethread Code: ");
-            FibonacciSequence.PrintFibo(n);
+            //FibonacciSequence.PrintFibo(n);
+            for (int i = 0; i < n; i++)
+                FibonacciMultithread.PrintFibo(n);
             Console.WriteLine("\nEnd Singlethread Code!!!");
             endTime = DateTime.Now;
             TimeSpan Duration2 = endTime - startTime;
 
             Console.WriteLine($"\nTime of Multithread Code: {Duration1.TotalMilliseconds,10}"
                 + $"\nTime of Sequence Code:    {Duration2.TotalMilliseconds,10}");
-
+   
             Console.ReadKey();
         }
     }

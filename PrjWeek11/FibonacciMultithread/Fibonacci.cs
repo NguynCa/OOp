@@ -10,22 +10,22 @@ namespace Fibonacci
     class FibonacciMultithread
     {
         public static int[] a = new int[100];
-        public static int Fibonacci(int n)
+        static int Fibonacci(int n)
         {
             double x = 1.0 / Math.Sqrt(5.0);
             double y = (1.0 + Math.Sqrt(5.0)) / 2.0;
             double z = (1.0 - Math.Sqrt(5.0)) / 2.0;
             return (int)Math.Round(x * (Math.Pow(y, n) - Math.Pow(z, n)));
         }
-        static void LoadFibo(int n)
+        public static void PrintFibo(int n)
         {
             a[n - 1] = Fibonacci(n);
-            //Console.WriteLine($"task:{Task.CurrentId, 3}  " + $"thread: {Thread.CurrentThread.ManagedThreadId, 3}  "
-            //+ $"a[{n}]: {a[n],10}");
+            //Console.WriteLine($"task:{Task.CurrentId,3}  " + $"thread: {Thread.CurrentThread.ManagedThreadId}"
+            //    + $"\n{a[n],10}");
         }
         public static void ParallelFor(int n)
         {
-            ParallelLoopResult result = Parallel.For(1, n + 1, LoadFibo);
+            ParallelLoopResult result = Parallel.For(1, n + 1, PrintFibo);
             Console.WriteLine($"All task start and finish: {result.IsCompleted}");
         }
     }

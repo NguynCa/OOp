@@ -1,0 +1,7 @@
+D:\Github\OOp\PrjWeek11\MulMatrixVector\bin\Debug\MulMatrixVector.exe.config
+D:\Github\OOp\PrjWeek11\MulMatrixVector\bin\Debug\MulMatrixVector.exe
+D:\Github\OOp\PrjWeek11\MulMatrixVector\bin\Debug\MulMatrixVector.pdb
+D:\Github\OOp\PrjWeek11\MulMatrixVector\obj\Debug\MulMatrixVector.csproj.AssemblyReference.cache
+D:\Github\OOp\PrjWeek11\MulMatrixVector\obj\Debug\MulMatrixVector.csproj.CoreCompileInputs.cache
+D:\Github\OOp\PrjWeek11\MulMatrixVector\obj\Debug\MulMatrixVector.exe
+D:\Github\OOp\PrjWeek11\MulMatrixVector\obj\Debug\MulMatrixVector.pdb
