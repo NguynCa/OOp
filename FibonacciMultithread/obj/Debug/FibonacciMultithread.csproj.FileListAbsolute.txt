@@ -1,0 +1,7 @@
+D:\oop\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.csproj.AssemblyReference.cache
+D:\oop\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.csproj.CoreCompileInputs.cache
+D:\oop\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.exe.config
+D:\oop\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.exe
+D:\oop\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.pdb
+D:\oop\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.exe
+D:\oop\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.pdb
