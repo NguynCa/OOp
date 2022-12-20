@@ -17,7 +17,7 @@ namespace MultiplyMatrices
             // speedup in the parallel loop vs. the sequential loop.
             int colCount = 180;
             int rowCount = 5000;
-            int colCount2 = 270;
+            int colCount2 = 1;
             double[,] m1 = Calculation.InitializeMatrix(rowCount, colCount);
             double[,] m2 = Calculation.InitializeMatrix(colCount, colCount2);
             double[,] result = new double[rowCount, colCount2];

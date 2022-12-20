@@ -8,9 +8,9 @@ namespace MulMatrixVector
 {
     class Calculation
     {
-        public static double[] pVector = new double[] { };
-		public static double[] pMatrix = new double[] { };
-		public static double[] pResult = new double[] { };
+        //public static double[] pVector = new double[] { };
+		//public static double[] pMatrix = new double[] { };
+		//public static double[] pResult = new double[] { };
 		public static int size;
 
 		// Function for formatted vector output
@@ -21,7 +21,7 @@ namespace MulMatrixVector
 		}
 
 		// Function for random definition of matrix and vector elements
-		static void RandomDataInitialization(ref double[] pMatrix, ref double[] pVector, int Size)
+		public static void RandomDataInitialization(ref double[] pMatrix, ref double[] pVector, int Size)
 		{
 			for (int i = 0; i < Size; i++)
 			{
@@ -36,7 +36,7 @@ namespace MulMatrixVector
 		}
 
 		// Function for memory allocation and definition of object’s elements
-		public static void ProcessInitialization(ref double[] pVector, int Size)
+		public static void ProcessInitialization(ref int Size)
 		{
 			//size of initial vector definition
 			do
@@ -48,28 +48,19 @@ namespace MulMatrixVector
 			}
 			while (Size <= 0);
 			//memory allocation
-			pMatrix = new double[Size * Size];
-			pVector = new double[Size];
-			pResult = new double[Size];
-			RandomDataInitialization(ref pMatrix, ref pVector, Size);
+
 			//PrintVector(pVector, Size);
 		}
 
 		// Function for parallel matrix-vector multiplication
-		static void Cal(double[] pMatrix, double[] pVector, ref double[] pResult, int i)
-		{
+		public static void ParallelResultCalculation(double[] pMatrix, double[] pVector, double[] pResult)
+        {
+			Parallel.For(0, size, i =>
+			{
 				pResult[i] = 0;
 				for (int j = 0; j < size; j++)
 					pResult[i] += pMatrix[i * size + j] * pVector[j];
-		}
-		static void LoadResult(int i)
-        {
-			Cal(pMatrix, pVector, ref pResult, i);
-		}
-		public static void ParallelResultCalculation()
-        {
-			ParallelLoopResult result = Parallel.For(0, size, LoadResult);
-			Console.WriteLine($"All task start and finish: {result.IsCompleted}");
+			}); // Parallel.For
 		}
 
 		// Function for serial matrix-vector multiplication

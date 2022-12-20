@@ -12,41 +12,32 @@ namespace MulMatrixVector
     {
         static void Main(string[] args)
         {
-            Calculation.ProcessInitialization(ref Calculation.pVector, Calculation.size);
-
+            Calculation.ProcessInitialization(ref Calculation.size);
+            int Size = Calculation.size;
+            double[] pMatrix = new double[Size * Size];
+            double[] pVector = new double[Size];
+            double[] pResult = new double[Size];
+            Calculation.RandomDataInitialization(ref pMatrix, ref pVector, Size);
             //multithread
-            //DateTime startTime = DateTime.Now;
             Console.WriteLine("Start Multithread Code");
-            Console.Error.WriteLine("Executing sequential loop...");
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            Calculation.ParallelResultCalculation();
-            //Calculation.PrintVector(Calculation.pResult, Calculation.size);
-            Console.WriteLine("End Multithread Code!!!");
+            Calculation.ParallelResultCalculation(pMatrix, pVector, pResult);
             stopwatch.Stop();
+            Console.WriteLine("End Multithread Code!!!");
             Console.Error.WriteLine("Sequential loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
-            //DateTime endTime = DateTime.Now;
-            //TimeSpan Duration1 = endTime - startTime;
 
             stopwatch.Reset();
 
-            Calculation.ProcessInitialization(ref Calculation.pVector, Calculation.size);
-            //sequence
-            //startTime = DateTime.Now;
+            //singlethread
             Console.WriteLine("Start Singlethread Code");
             stopwatch.Start();
-            Calculation.SerialResultCalculation(Calculation.pMatrix, Calculation.pVector, ref Calculation.pResult, Calculation.size);
-            //Calculation.PrintVector(Calculation.pResult, Calculation.size);
-            Console.WriteLine("End Singlethread Code!!!");
+            Calculation.SerialResultCalculation(pMatrix, pVector, ref pResult, Calculation.size);
             stopwatch.Stop();
+            Console.WriteLine("End Singlethread Code!!!");
             Console.Error.WriteLine("Parallel loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
-            //endTime = DateTime.Now;
-            //TimeSpan Duration2 = endTime - startTime;
-
-            //Console.WriteLine($"\nTime of Multithread Code: {Duration1.TotalMilliseconds,10}"
-            //    + $"\nTime of Sequence Code:    {Duration2.TotalMilliseconds,10}");
             Console.ReadKey();
         }
     }
