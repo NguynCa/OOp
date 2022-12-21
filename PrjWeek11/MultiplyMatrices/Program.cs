@@ -19,6 +19,7 @@ namespace MultiplyMatrices
             double[,] m2 = Calculation.InitializeMatrix(colCount, colCount2);
             double[,] result = new double[rowCount, colCount2];
 
+            #region Compare
             //Singlethread
             Console.WriteLine("Start Singlethread Code");
             Stopwatch stopwatch = new Stopwatch();
@@ -46,8 +47,9 @@ namespace MultiplyMatrices
             Console.WriteLine("Parallel loop time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
             Calculation.OfferToPrint(rowCount, colCount2, result);
+            #endregion
 
-            // Keep the console window open in debug mode.
+            //Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaseTest.cs" />
     <Compile Include="CheckPrimeNumber.cs" />
     <Compile Include="FindNearestPrimeNumber.cs" />
     <Compile Include="OtherFunctions.cs" />

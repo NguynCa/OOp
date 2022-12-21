@@ -17,7 +17,7 @@ namespace Fibonacci
             double z = (1.0 - Math.Sqrt(5.0)) / 2.0;
             return (int)Math.Round(x * (Math.Pow(y, n) - Math.Pow(z, n)));
         }
-        public static void PrintFibo(int n)
+        public static void LoadFibo(int n)
         {
             a[n - 1] = Fibonacci(n);
             //Console.WriteLine($"task:{Task.CurrentId,3}  " + $"thread: {Thread.CurrentThread.ManagedThreadId}"
@@ -25,7 +25,7 @@ namespace Fibonacci
         }
         public static void ParallelFor(int n)
         {
-            ParallelLoopResult result = Parallel.For(1, n + 1, PrintFibo);
+            ParallelLoopResult result = Parallel.For(1, n + 1, LoadFibo);
             Console.WriteLine($"All task start and finish: {result.IsCompleted}");
         }
     }

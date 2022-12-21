@@ -60,12 +60,37 @@ namespace FindPrimeNumber
                 }
             }
         }
-        public static void FunctionThreadB(int[,] forThreadB, bool[] isPrime, int[] lastReturn, int n)
+        public static void FunctionThreadB (int[,] forThreadB, bool[] isPrime, int[] lastReturn, int n)
         {
             for (int i = 0; i < n; i++)
             {
                 int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadB[0, i]);
                 lastReturn[forThreadB[1, i]] = temp;
+            }
+        }
+        public static void PrintForMultiThread (int[] array, int[] lastReturn, bool[] isPrime, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.Write("\n");
+            lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(lastReturn[i] + " ");
+            }
+        }
+        public static void PrintForSinglethread (int[] array, int[] lastReturn, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.Write("\n");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(lastReturn[i] + " ");
             }
         }
     }

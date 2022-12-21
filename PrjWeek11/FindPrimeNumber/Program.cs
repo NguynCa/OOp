@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace FindPrimeNumber
 {
@@ -11,18 +12,23 @@ namespace FindPrimeNumber
     {
         static void Main(string[] args)
         {
-            int n = 10;
-            int[] array = new int[n];// { 3, 8, 9, 56, 146, 589, 446, 357, 448, 351 };
+            int n = 10000000;
+            int[] array = new int[n];
             for (int i = 0; i < n; i++)
             {
                 DateTime now = new DateTime();
                 now = DateTime.Now;
                 array[i] = now.Millisecond;
-                Thread.Sleep(123);
+                //Thread.Sleep(4);
             }
             int maxArray = OtherFunctions.FindMax(array);
             bool[] isPrime = new bool[maxArray + 1];
             CheckPrimeNumber.SieveOfEratosthenes(maxArray, ref isPrime);
+
+    //Multithread Code Start
+            Stopwatch stopwatch = new Stopwatch();
+            Console.WriteLine("Start Multithread Code: ");
+            stopwatch.Start();
 
             #region Prepare data for multithreading
             int[,] forThreadA = new int[2, n + 1];
@@ -46,21 +52,32 @@ namespace FindPrimeNumber
                 );
             #endregion
 
-            #region Multithread 
+            #region Compare
+        //multithread
             threadA.Start();
             threadB.Start();
+            //OtherFunctions.PrintForMultiThread(array, lastReturn, isPrime, n);
+            Console.WriteLine("\nEnd Multithread Code!!!");
+            stopwatch.Stop();
+            Console.WriteLine("Multithread time in milliseconds: {0}",
+                                    stopwatch.ElapsedMilliseconds);
+            stopwatch.Reset();
+        //sequence
+            Console.WriteLine("Start Singlethread Code: ");
+            stopwatch.Start();
             for (int i = 0; i < n; i++)
             {
-                Console.Write(array[i] + " ");
+            lastReturn[i] = FindNearestPrimeNumber.FindNearest(isPrime, array[i]);
             }
-            Console.Write("\n");
-            lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(lastReturn[i] + " ");
-            }    
+            //OtherFunctions.PrintForSinglethread(array, lastReturn, n);
+            Console.WriteLine("\nEnd Singlethread Code!!!");
+            stopwatch.Stop();
+            Console.WriteLine("Singlethread time in milliseconds: {0}",
+                                    stopwatch.ElapsedMilliseconds);
             #endregion
 
+            //Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }

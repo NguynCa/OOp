@@ -12,6 +12,7 @@ namespace MultiplyMatrices
     {
 
         // Function for serial matrix-matrix multiplication
+        #region SingleThread
         public static void MultiplyMatricesSequential(double[,] matA, double[,] matB, double[,] result)
         {
             int matACols = matA.GetLength(1);
@@ -31,8 +32,10 @@ namespace MultiplyMatrices
                 }
             }
         }
+        #endregion
 
         // Function for parallel matrix-matrix multiplication
+        #region Multithread
         public static void MultiplyMatricesParallel(double[,] matA, double[,] matB, double[,] result)
         {
             int matACols = matA.GetLength(1);
@@ -52,8 +55,10 @@ namespace MultiplyMatrices
                 }
             }); // Parallel.For
         }
+        #endregion
 
         // Function for random definition of matrix and vector elements
+        #region Prepare
         public static double[,] InitializeMatrix(int rows, int cols)
         {
             double[,] matrix = new double[rows, cols];
@@ -68,7 +73,6 @@ namespace MultiplyMatrices
             }
             return matrix;
         }
-
         public static void OfferToPrint(int rowCount, int colCount, double[,] matrix)
         {
             Console.Error.Write("Computation complete. Print results (y/n)? ");
@@ -94,5 +98,6 @@ namespace MultiplyMatrices
                 }
             }
         }
+        #endregion
     }
 }

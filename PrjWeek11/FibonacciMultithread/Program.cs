@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
+using System.Diagnostics;
 
 namespace Fibonacci
 {
@@ -15,31 +10,37 @@ namespace Fibonacci
             Console.Write("Enter the number of Fibonacci digits: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
+            #region Compare
             //multithread
-            DateTime startTime = DateTime.Now;
+            Stopwatch stopwatch = new Stopwatch();
             Console.WriteLine("Start Multithread Code: ");
+            stopwatch.Start();
             FibonacciMultithread.ParallelFor(n);
             for (int i = 0; i < n; i++)
             {
                 Console.Write(FibonacciMultithread.a[i] + " ");
             }
             Console.WriteLine("\nEnd Multithread Code!!!");
-            DateTime endTime = DateTime.Now;
-            TimeSpan Duration1 = endTime - startTime;
+            stopwatch.Stop();
+            Console.WriteLine("Multithread Code run time: " + stopwatch.ElapsedMilliseconds);
 
+            stopwatch.Reset();
             //sequence
-            startTime = DateTime.Now;
+            stopwatch.Start();
             Console.WriteLine("Start Singlethread Code: ");
-            //FibonacciSequence.PrintFibo(n);
+            for (int i = 1; i < n; i++)
+                FibonacciMultithread.LoadFibo(i);
             for (int i = 0; i < n; i++)
-                FibonacciMultithread.PrintFibo(n);
+            {
+                Console.Write(FibonacciMultithread.a[i] + " ");
+            }
             Console.WriteLine("\nEnd Singlethread Code!!!");
-            endTime = DateTime.Now;
-            TimeSpan Duration2 = endTime - startTime;
+            stopwatch.Stop();
+            Console.WriteLine("Singlethread Code run time: " + stopwatch.ElapsedMilliseconds);
+            #endregion
 
-            Console.WriteLine($"\nTime of Multithread Code: {Duration1.TotalMilliseconds,10}"
-                + $"\nTime of Sequence Code:    {Duration2.TotalMilliseconds,10}");
-   
+            //Keep the window console open in debug mode
+            Console.WriteLine("Press any key to exit!!!");   
             Console.ReadKey();
         }
     }
