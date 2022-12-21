@@ -31,7 +31,7 @@ namespace FindPrimeNumber
         int B = 0;
             for (int i = 0; i < n; i++)
             {
-                if (CheckParity(array[i]))
+                if (!CheckParity(array[i]))
                 {
                     forThreadA[0, A] = array[i];
                     forThreadA[1, A] = i;

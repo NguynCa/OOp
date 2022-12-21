@@ -25,7 +25,7 @@ namespace FindPrimeNumber
             #region Prepare data for multithreading
             int[,] forThreadA = new int[2, n + 1];
             int[,] forThreadB = new int[2, n + 1];
-            OtherFunctions.NumberDistribution(forThreadB, forThreadA, array, n);
+            OtherFunctions.NumberDistribution(forThreadA, forThreadB, array, n);
             #endregion
 
             #region Multithread initialization
@@ -43,10 +43,10 @@ namespace FindPrimeNumber
                         {
                             //Thread threadC = new Thread(
                             //    delegate ()
-                                {
+                            //    {
                                     int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadA[0, i]);
                                     lastReturn[forThreadA[1, i]] = temp;
-                                }
+                            //    }
                             //    );
                             //threadC.Start();
                         }
@@ -75,6 +75,29 @@ namespace FindPrimeNumber
                 Console.Write(array[i] + " ");
             }
             Console.Write("\n");
+            /*
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(forThreadA[0, i] + " ");
+            }
+            Console.Write("\n");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(forThreadA[1, i] + " ");
+            }
+            Console.Write("\n");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(forThreadB[0, i] + " ");
+            }
+            Console.Write("\n");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(forThreadB[1, i] + " ");
+            }
+            Console.Write("\n");
+            */
+            lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
             for (int i = 0; i < n; i++)
             {
                 Console.Write(lastReturn[i] + " ");
