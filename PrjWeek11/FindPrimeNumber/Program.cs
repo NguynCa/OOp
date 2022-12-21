@@ -33,34 +33,13 @@ namespace FindPrimeNumber
             Thread threadA = new Thread(
                 delegate () 
                 {
-                    for (int i = 0; i < n; i++)
-                    {
-                        if (CheckPrimeNumber.Check(forThreadA[0,i], isPrime))
-                        {
-                            lastReturn[forThreadA[1, i]] = forThreadA[0, i];
-                        }
-                        else
-                        {
-                            //Thread threadC = new Thread(
-                            //    delegate ()
-                            //    {
-                                    int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadA[0, i]);
-                                    lastReturn[forThreadA[1, i]] = temp;
-                            //    }
-                            //    );
-                            //threadC.Start();
-                        }
-                    }
+                    OtherFunctions.FunctionThreadA(forThreadA, isPrime, lastReturn, n);
                 }
                 );
             Thread threadB = new Thread(
                 delegate () 
                 {
-                    for (int i = 0; i < n; i++)
-                    {
-                        int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadB[0, i]);
-                        lastReturn[forThreadB[1, i]] = temp;
-                    }
+                    OtherFunctions.FunctionThreadB(forThreadB, isPrime, lastReturn, n);
                 }
                 );
             #endregion
@@ -68,35 +47,11 @@ namespace FindPrimeNumber
             #region Multithread 
             threadA.Start();
             threadB.Start();
-            //lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
-            //lastReturn[1] = FindNearestPrimeNumber.FindNearest(isPrime, array[1]);
             for (int i = 0; i < n; i++)
             {
                 Console.Write(array[i] + " ");
             }
             Console.Write("\n");
-            /*
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(forThreadA[0, i] + " ");
-            }
-            Console.Write("\n");
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(forThreadA[1, i] + " ");
-            }
-            Console.Write("\n");
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(forThreadB[0, i] + " ");
-            }
-            Console.Write("\n");
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(forThreadB[1, i] + " ");
-            }
-            Console.Write("\n");
-            */
             lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
             for (int i = 0; i < n; i++)
             {
