@@ -12,12 +12,12 @@ namespace FindPrimeNumber
         static void Main(string[] args)
         {
             int n = 10;
-            int[] array = new int[n];
-            for (int i = 0; i < n; i++)
+            int[] array = new int[] { 3, 8, 9, 56, 146, 589, 446, 357, 448, 351 };
+        /*    for (int i = 0; i < n; i++)
             {
                 Random random = new Random();
                 array[i] = random.Next(1000);
-            }
+            }*/
             int maxArray = OtherFunctions.FindMax(array);
             bool[] isPrime = new bool[maxArray + 1];
             CheckPrimeNumber.SieveOfEratosthenes(maxArray, ref isPrime);
@@ -73,6 +73,9 @@ namespace FindPrimeNumber
                 Console.Write(array[i] + " ");
             }
             Console.Write("\n");
+
+            lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
+            lastReturn[1] = FindNearestPrimeNumber.FindNearest(isPrime, array[1]);
             for (int i = 0; i < n; i++)
             {
                 Console.Write(lastReturn[i] + " ");
