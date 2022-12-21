@@ -12,8 +12,8 @@ namespace FindPrimeNumber
         static void Main(string[] args)
         {
             int n = 10;
-            int[] array = new int[n + 1];
-            for (int i = 0; i <= n; i++)
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
             {
                 Random random = new Random();
                 array[i] = random.Next(1000);

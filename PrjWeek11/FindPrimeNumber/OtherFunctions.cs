@@ -29,7 +29,7 @@ namespace FindPrimeNumber
         {
         int A = 0;
         int B = 0;
-            for (int i = 0; i <= n; i++)
+            for (int i = 0; i < n; i++)
             {
                 if (CheckParity(array[i]))
                 {
