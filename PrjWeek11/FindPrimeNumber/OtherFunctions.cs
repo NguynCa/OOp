@@ -27,8 +27,8 @@ namespace FindPrimeNumber
         }
         public static void NumberDistribution (int[,] forThreadA, int[,] forThreadB, int[] array, int n)
         {
-        int A = 1;
-        int B = 1;
+        int A = 0;
+        int B = 0;
             for (int i = 0; i <= n; i++)
             {
                 if (CheckParity(array[i]))
