@@ -23,8 +23,8 @@ namespace FindPrimeNumber
             CheckPrimeNumber.SieveOfEratosthenes(maxArray, ref isPrime);
 
             #region Prepare data for multithreading
-            int[,] forThreadA = new int[2, n];
-            int[,] forThreadB = new int[2, n];
+            int[,] forThreadA = new int[2, n + 1];
+            int[,] forThreadB = new int[2, n + 1];
             OtherFunctions.NumberDistribution(forThreadA, forThreadB, array, n);
             #endregion
 
@@ -44,8 +44,8 @@ namespace FindPrimeNumber
                             Thread threadC = new Thread(
                                 delegate ()
                                 {
-                                    FindNearestPrimeNumber.FindNearest(isPrime, forThreadA[0, i]);
-                                    lastReturn[forThreadA[1, i]] = forThreadA[0, i];
+                                    int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadA[0, i]);
+                                    lastReturn[forThreadA[1, i]] = temp;
                                 }
                                 );
                             threadC.Start();
@@ -58,8 +58,8 @@ namespace FindPrimeNumber
                 {
                     for (int i = 0; i < n; i++)
                     {
-                        FindNearestPrimeNumber.FindNearest(isPrime, forThreadB[0, i]);
-                        lastReturn[forThreadB[1, i]] = forThreadB[0, i];
+                        int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadB[0, i]);
+                        lastReturn[forThreadB[1, i]] = temp;
                     }
                 }
                 );
@@ -70,7 +70,12 @@ namespace FindPrimeNumber
             threadB.Start();
             for (int i = 0; i < n; i++)
             {
-                Console.Write(lastReturn[i] + "");
+                Console.Write(array[i] + " ");
+            }
+            Console.Write("\n");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(lastReturn[i] + " ");
             }    
             #endregion
 
