@@ -29,19 +29,7 @@ namespace FindPrimeNumber
             #endregion
 
             #region Multithread initialization
-            int[] lastReturn = new int[n];
-            int[,] inter = new int[2, n];
-            int temp = 0;
-            Thread threadC = new Thread(
-                delegate ()
-                {
-                    for (int i = 0; i < n; i++)
-                    {
-                        FindNearestPrimeNumber.FindNearest(isPrime, inter[0, i]);
-                        lastReturn[inter[1, i]] = inter[0, i];
-                    }
-                }
-                );
+            int[] lastReturn = new int[n];            
             Thread threadA = new Thread(
                 delegate () 
                 {
@@ -53,8 +41,13 @@ namespace FindPrimeNumber
                         }
                         else
                         {
-                            inter[1, temp] = forThreadA[0, i];
-                            temp++;
+                            Thread threadC = new Thread(
+                                delegate ()
+                                {
+                                    FindNearestPrimeNumber.FindNearest(isPrime, forThreadA[0, i]);
+                                    lastReturn[forThreadA[1, i]] = forThreadA[0, i];
+                                }
+                                );
                             threadC.Start();
                         }
                     }
