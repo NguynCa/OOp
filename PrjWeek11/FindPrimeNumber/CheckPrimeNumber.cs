@@ -8,7 +8,7 @@ namespace FindPrimeNumber
 {
     class CheckPrimeNumber
     {
-        public static void SieveOfEratosthenes (int n, ref bool[] isPrime)
+        public static void SieveOfEratosthenes(int n, ref bool[] isPrime)
         {
             for (int i = 0; i <= n; i++)
                 isPrime[i] = true;
@@ -24,7 +24,7 @@ namespace FindPrimeNumber
                 }
             }
         }
-        public static bool Check (int n, bool[] isPrime)
+        public static bool Check(int n, bool[] isPrime)
         {
             if (isPrime[n] == true) return true;
             return false;

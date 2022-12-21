@@ -11,7 +11,8 @@ namespace FindPrimeNumber
         public static int FindNearest(bool[] isPrime, int n)
         {
             int dist = Math.Abs(n - 2);
-            int temp = 0;
+            int temp;
+            int nearest = 0;
             for (int i = 3; i < isPrime.GetLength(0); i++)
             {
                 if (isPrime[i] == false) continue;
@@ -19,10 +20,11 @@ namespace FindPrimeNumber
                 if (dist > temp)
                 {
                     dist = temp;
-                    temp = i;
+                    nearest = i;
                 }
+                if (dist < temp) break;
             }
-            return temp;
+            return nearest;
         }
     }
 }
