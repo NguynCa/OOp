@@ -40,8 +40,10 @@ namespace Fibonacci
             #endregion
 
             //Keep the window console open in debug mode
-            Console.WriteLine("Press any key to exit!!!");   
+            Console.WriteLine("Press any key to exit!!!");
+
             Console.ReadKey();
+            
         }
     }
 }

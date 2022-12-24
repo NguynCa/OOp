@@ -14,7 +14,7 @@ namespace MultiplyMatrices
         {
             int colCount = 180;
             int rowCount = 5000;
-            int colCount2 = 1;
+            int colCount2 = 20;
             double[,] m1 = Calculation.InitializeMatrix(rowCount, colCount);
             double[,] m2 = Calculation.InitializeMatrix(colCount, colCount2);
             double[,] result = new double[rowCount, colCount2];

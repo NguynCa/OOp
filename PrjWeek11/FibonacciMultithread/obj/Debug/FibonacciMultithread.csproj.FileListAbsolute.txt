@@ -5,10 +5,9 @@ D:\oop\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.exe
 D:\oop\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.pdb
 D:\oop\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.exe
 D:\oop\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.pdb
+D:\Github\OOp\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.csproj.CoreCompileInputs.cache
 D:\Github\OOp\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.exe.config
 D:\Github\OOp\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.exe
 D:\Github\OOp\PrjWeek11\FibonacciMultithread\bin\Debug\FibonacciMultithread.pdb
-D:\Github\OOp\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.csproj.AssemblyReference.cache
-D:\Github\OOp\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.csproj.CoreCompileInputs.cache
 D:\Github\OOp\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.exe
 D:\Github\OOp\PrjWeek11\FibonacciMultithread\obj\Debug\FibonacciMultithread.pdb

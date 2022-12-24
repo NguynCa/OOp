@@ -12,7 +12,7 @@ namespace FindPrimeNumber
     {
         static void Main(string[] args)
         {
-            int n = 10000000;
+            int n = 100;
             int[] array = new int[n];
             for (int i = 0; i < n; i++)
             {
@@ -50,13 +50,20 @@ namespace FindPrimeNumber
                     OtherFunctions.FunctionThreadB(forThreadB, isPrime, lastReturn, n);
                 }
                 );
+            Thread threadC = new Thread(
+                delegate ()
+                {
+                    Console.WriteLine("Multithread: ");
+                    OtherFunctions.PrintForMultiThread(array, lastReturn, isPrime, n);
+                }
+                );
             #endregion
 
             #region Compare
         //multithread
             threadA.Start();
             threadB.Start();
-            //OtherFunctions.PrintForMultiThread(array, lastReturn, isPrime, n);
+            threadC.Start();
             Console.WriteLine("\nEnd Multithread Code!!!");
             stopwatch.Stop();
             Console.WriteLine("Multithread time in milliseconds: {0}",
@@ -69,7 +76,7 @@ namespace FindPrimeNumber
             {
             lastReturn[i] = FindNearestPrimeNumber.FindNearest(isPrime, array[i]);
             }
-            //OtherFunctions.PrintForSinglethread(array, lastReturn, n);
+            OtherFunctions.PrintForSinglethread(array, lastReturn, n);
             Console.WriteLine("\nEnd Singlethread Code!!!");
             stopwatch.Stop();
             Console.WriteLine("Singlethread time in milliseconds: {0}",
