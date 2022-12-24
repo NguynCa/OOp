@@ -5,3 +5,7 @@ D:\Github\OOp\PrjWeek11\FindPrimeNumber\obj\Debug\FindPrimeNumber.csproj.Assembl
 D:\Github\OOp\PrjWeek11\FindPrimeNumber\obj\Debug\FindPrimeNumber.csproj.CoreCompileInputs.cache
 D:\Github\OOp\PrjWeek11\FindPrimeNumber\obj\Debug\FindPrimeNumber.exe
 D:\Github\OOp\PrjWeek11\FindPrimeNumber\obj\Debug\FindPrimeNumber.pdb
+D:\Github\OOp\PrjWeek11\FindPrimeNumber\bin\Debug\FuntionsInheritance.exe
+D:\Github\OOp\PrjWeek11\FindPrimeNumber\bin\Debug\FuntionsInheritance.pdb
+D:\Github\OOp\PrjWeek11\FindPrimeNumber\bin\Debug\FuntionsInheritance.exe.config
+D:\Github\OOp\PrjWeek11\FindPrimeNumber\obj\Debug\FindPrimeNumber.csproj.CopyComplete

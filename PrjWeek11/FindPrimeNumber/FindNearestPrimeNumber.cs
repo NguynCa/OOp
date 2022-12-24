@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FuntionsInheritance;
 
 namespace FindPrimeNumber
 {
     class FindNearestPrimeNumber
     {
-        public static int FindNearest(bool[] isPrime, int n)
+        public static int findNearest(Matrix isPrime, int n)
         {
             int dist = Math.Abs(n - 2);
             int temp;
             int nearest = 0;
-            for (int i = 3; i < isPrime.GetLength(0); i++)
+            for (int i = 3; i < isPrime.N; i++)
             {
-                if (isPrime[i] == false) continue;
+                if (isPrime.A[0, i] == 0) continue;
                 temp = Math.Abs(n - i);
                 if (dist > temp)
                 {

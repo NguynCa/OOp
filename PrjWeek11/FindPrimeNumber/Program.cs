@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using FuntionsInheritance;
 
 namespace FindPrimeNumber
 {
@@ -13,70 +14,39 @@ namespace FindPrimeNumber
         static void Main(string[] args)
         {
             int n = 100;
-            int[] array = new int[n];
+            Matrix array = new Matrix(1, n);
             for (int i = 0; i < n; i++)
             {
                 DateTime now = new DateTime();
                 now = DateTime.Now;
-                array[i] = now.Millisecond;
+                array.A[0, i] = now.Millisecond;
                 //Thread.Sleep(4);
             }
-            int maxArray = OtherFunctions.FindMax(array);
-            bool[] isPrime = new bool[maxArray + 1];
-            CheckPrimeNumber.SieveOfEratosthenes(maxArray, ref isPrime);
+            int maxArray = OtherFunctions.findMax(array);
+            Matrix isPrime = new Matrix(1, maxArray + 1);
+            CheckPrimeNumber.sieveOfEratosthenes(maxArray, ref isPrime);
+            Matrix lastReturn = new Matrix(1, n);
 
-    //Multithread Code Start
+            Problem3 objProblem3 = new Problem3();
+            #region Compare
+            //Multithread
             Stopwatch stopwatch = new Stopwatch();
             Console.WriteLine("Start Multithread Code: ");
             stopwatch.Start();
-
-            #region Prepare data for multithreading
-            int[,] forThreadA = new int[2, n + 1];
-            int[,] forThreadB = new int[2, n + 1];
-            OtherFunctions.NumberDistribution(forThreadA, forThreadB, array, n);
-            #endregion
-
-            #region Multithread initialization
-            int[] lastReturn = new int[n];            
-            Thread threadA = new Thread(
-                delegate () 
-                {
-                    OtherFunctions.FunctionThreadA(forThreadA, isPrime, lastReturn, n);
-                }
-                );
-            Thread threadB = new Thread(
-                delegate () 
-                {
-                    OtherFunctions.FunctionThreadB(forThreadB, isPrime, lastReturn, n);
-                }
-                );
-            Thread threadC = new Thread(
-                delegate ()
-                {
-                    Console.WriteLine("Multithread: ");
-                    OtherFunctions.PrintForMultiThread(array, lastReturn, isPrime, n);
-                }
-                );
-            #endregion
-
-            #region Compare
-        //multithread
-            threadA.Start();
-            threadB.Start();
-            threadC.Start();
+            lastReturn = objProblem3.multithreadCode(isPrime, array);
+            //OtherFunctions.PrintForMultiThread(array, lastReturn, isPrime, n);
+            
             Console.WriteLine("\nEnd Multithread Code!!!");
             stopwatch.Stop();
             Console.WriteLine("Multithread time in milliseconds: {0}",
                                     stopwatch.ElapsedMilliseconds);
             stopwatch.Reset();
-        //sequence
+
+            //Singlethread
             Console.WriteLine("Start Singlethread Code: ");
             stopwatch.Start();
-            for (int i = 0; i < n; i++)
-            {
-            lastReturn[i] = FindNearestPrimeNumber.FindNearest(isPrime, array[i]);
-            }
-            OtherFunctions.PrintForSinglethread(array, lastReturn, n);
+            lastReturn = objProblem3.singlethreadCode(isPrime, array);
+            //OtherFunctions.PrintForSinglethread(array, lastReturn, n);
             Console.WriteLine("\nEnd Singlethread Code!!!");
             stopwatch.Stop();
             Console.WriteLine("Singlethread time in milliseconds: {0}",

@@ -4,93 +4,94 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using FuntionsInheritance;
 
 namespace FindPrimeNumber
 {
     class OtherFunctions
     {
-        public static int FindMax(int[] array)
+        public static int findMax(Matrix array)
         {
-            int n = array.GetLength(0);
-            int maxArray = array[0];
+            int n = array.N;
+            int maxArray = (int)array.A[0, 0];
             for (int i = 1; i < n; i++)
             {
-                if (maxArray < array[i])
-                    maxArray = array[i];
+                if (maxArray < array.A[0, i])
+                    maxArray = (int)array.A[0, i];
             }
             return maxArray;
         }
-        public static bool CheckParity(int n)
+        public static bool checkParity(int n)
         {
             if (n % 2 == 0) return true;
             return false;
         }
-        public static void NumberDistribution (int[,] forThreadA, int[,] forThreadB, int[] array, int n)
+        public static void numberDistribution (Matrix forThreadA, Matrix forThreadB, Matrix array)
         {
         int A = 0;
         int B = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < array.N; i++)
             {
-                if (!CheckParity(array[i]))
+                if (!checkParity((int)array.A[0, i]))
                 {
-                    forThreadA[0, A] = array[i];
-                    forThreadA[1, A] = i;
+                    forThreadA.A[0, A] = (int)array.A[0, i];
+                    forThreadA.A[1, A] = i;
                     A++;
                 }
                 else
                 {
-                    forThreadB[0, B] = array[i];
-                    forThreadB[1, B] = i;
+                    forThreadB.A[0, B] = (int)array.A[0, i];
+                    forThreadB.A[1, B] = i;
                     B++;
                 }
             }
         }
-        public static void FunctionThreadA (int[,] forThreadA, bool[] isPrime, int[] lastReturn, int n)
+        public static void functionThreadA (Matrix forThreadA, Matrix isPrime, Matrix lastReturn)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < lastReturn.N; i++)
             {
-                if (CheckPrimeNumber.Check(forThreadA[0, i], isPrime))
+                if (CheckPrimeNumber.check((int)forThreadA.A[0, i], isPrime))
                 {
-                    lastReturn[forThreadA[1, i]] = forThreadA[0, i];
+                    lastReturn.A[0, (int)forThreadA.A[1, i]] = (int)forThreadA.A[0, i];
                 }
                 else
                 {
-                    int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadA[0, i]);
-                    lastReturn[forThreadA[1, i]] = temp;
+                    int temp = FindNearestPrimeNumber.findNearest(isPrime, (int)forThreadA.A[0, i]);
+                    lastReturn.A[0, (int)forThreadA.A[1, i]] = temp;
                 }
             }
         }
-        public static void FunctionThreadB (int[,] forThreadB, bool[] isPrime, int[] lastReturn, int n)
+        public static void functionThreadB (Matrix forThreadB, Matrix isPrime, Matrix lastReturn)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < lastReturn.N; i++)
             {
-                int temp = FindNearestPrimeNumber.FindNearest(isPrime, forThreadB[0, i]);
-                lastReturn[forThreadB[1, i]] = temp;
+                int temp = FindNearestPrimeNumber.findNearest(isPrime, (int)forThreadB.A[0, i]);
+                lastReturn.A[0, (int)forThreadB.A[1, i]] = temp;
             }
         }
-        public static void PrintForMultiThread (int[] array, int[] lastReturn, bool[] isPrime, int n)
+        public static void printForMultiThread (Matrix array, Matrix lastReturn, Matrix isPrime, int n)
         {
             for (int i = 0; i < n; i++)
             {
-                Console.Write(array[i] + " ");
+                Console.Write(array.A[0, i] + " ");
             }
             Console.Write("\n");
-            lastReturn[0] = FindNearestPrimeNumber.FindNearest(isPrime, array[0]);
+            lastReturn.A[0, 0] = FindNearestPrimeNumber.findNearest(isPrime, (int)array.A[0, 0]);
             for (int i = 0; i < n; i++)
             {
-                Console.Write(lastReturn[i] + " ");
+                Console.Write(lastReturn.A[0, i] + " ");
             }
         }
-        public static void PrintForSinglethread (int[] array, int[] lastReturn, int n)
+        public static void printForSinglethread (Matrix array, Matrix lastReturn, int n)
         {
             for (int i = 0; i < n; i++)
             {
-                Console.Write(array[i] + " ");
+                Console.Write(array.A[0, i] + " ");
             }
             Console.Write("\n");
             for (int i = 0; i < n; i++)
             {
-                Console.Write(lastReturn[i] + " ");
+                Console.Write(lastReturn.A[0, i] + " ");
             }
         }
     }
