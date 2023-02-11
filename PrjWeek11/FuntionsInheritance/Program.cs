@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FuntionsInheritance
 {
-    #region interface
+    
     public interface ICalculate
     {
         Matrix multithreadCode(Matrix matrix1, Matrix matrix2);
@@ -16,10 +16,8 @@ namespace FuntionsInheritance
     {
         void initializeObject(ref Matrix A);
     }
-    #endregion
     public class Matrix : IPrepare
     {
-        #region Properties and Field
         private int _m;
         private int _n;
         public int M
@@ -38,17 +36,15 @@ namespace FuntionsInheritance
             get => _a;
             set => _a = A;
         }
-        #endregion
-        #region Constructor
         public Matrix(int m, int n)
         {
             this._m = m;
             this._n = n;
             this._a = new double[M, N];
         }
-        #endregion
+
         // Function for random definition of matrix and vector elements
-        #region Method
+        #region Prepare
         public void initializeObject(ref Matrix matrix)
         {
             Random r = new Random();
