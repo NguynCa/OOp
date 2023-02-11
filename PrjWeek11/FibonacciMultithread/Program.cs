@@ -10,7 +10,6 @@ namespace FibonacciProblem
         {
             Console.Write("Enter the number of Fibonacci digits: ");
             int n = Convert.ToInt32(Console.ReadLine());
-
             FibonacciNumber fibo1 = new FibonacciNumber(n);
             #region Compare
             //multithread
@@ -18,7 +17,7 @@ namespace FibonacciProblem
             Console.WriteLine("Start Multithread Code: ");
             stopwatch.Start();
             fibo1.findFiByMulThread();
-            fibo1.ToString();
+            Console.WriteLine(fibo1.ToString());
             Console.WriteLine("\nEnd Multithread Code!!!");
             stopwatch.Stop();
             Console.WriteLine("Multithread Code run time: " + stopwatch.ElapsedMilliseconds);
@@ -28,7 +27,7 @@ namespace FibonacciProblem
             stopwatch.Start();
             Console.WriteLine("Start Singlethread Code: ");
             fibo1.findFiBySingleThread();
-            fibo1.ToString();
+            Console.WriteLine(fibo1.ToString());
             Console.WriteLine("\nEnd Singlethread Code!!!");
             stopwatch.Stop();
             Console.WriteLine("Singlethread Code run time: " + stopwatch.ElapsedMilliseconds);

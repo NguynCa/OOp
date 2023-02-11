@@ -13,7 +13,7 @@ namespace FindPrimeNumber
     {
         static void Main(string[] args)
         {
-            int n = 100;
+            int n = 1500000;
             Matrix array = new Matrix(1, n);
             for (int i = 0; i < n; i++)
             {

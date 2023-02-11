@@ -1,0 +1,27 @@
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\bin\Debug\MultiThreadGUI.exe.config
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\bin\Debug\MultiThreadGUI.exe
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\bin\Debug\MultiThreadGUI.pdb
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.AssemblyReference.cache
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.Properties.Resources.resources
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.GenerateResource.cache
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.exe
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.pdb
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FControl.resources
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FProblem1.resources
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FProblem2.resources
+C:\Users\Nguyen Khac Anh Tuan\Desktop\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FProblem3.resources
+D:\MultiThreadGUI\MultiThreadGUI\bin\Debug\MultiThreadGUI.exe.config
+D:\MultiThreadGUI\MultiThreadGUI\bin\Debug\MultiThreadGUI.exe
+D:\MultiThreadGUI\MultiThreadGUI\bin\Debug\MultiThreadGUI.pdb
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.AssemblyReference.cache
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FControl.resources
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FProblem3.resources
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FProblem1.resources
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.FProblem2.resources
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.Properties.Resources.resources
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.GenerateResource.cache
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.csproj.CoreCompileInputs.cache
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.exe
+D:\MultiThreadGUI\MultiThreadGUI\obj\Debug\MultiThreadGUI.pdb

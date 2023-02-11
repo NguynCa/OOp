@@ -1,0 +1,7 @@
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\bin\Debug\FuntionsInheritance.exe.config
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\bin\Debug\FuntionsInheritance.exe
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\bin\Debug\FuntionsInheritance.pdb
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\obj\Debug\prjFuntionsInheritance.csproj.AssemblyReference.cache
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\obj\Debug\prjFuntionsInheritance.csproj.CoreCompileInputs.cache
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\obj\Debug\FuntionsInheritance.exe
+D:\Github\OOp\PrjWeek11\FuntionsInheritance\obj\Debug\FuntionsInheritance.pdb

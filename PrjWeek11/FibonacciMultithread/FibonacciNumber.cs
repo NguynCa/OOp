@@ -16,9 +16,9 @@ namespace FibonacciProblem
             get => _n;
             set => _n = N;
         }
-        public int[] a = new int[100];
+        public long[] a = new long[100];
         #endregion
-        #region Methods
+        #region Constructor
         public FibonacciNumber(int n)
         {
             _n = n;
@@ -27,12 +27,14 @@ namespace FibonacciProblem
                 a[i] = 0;
             }
         }
-        static int getFibonacciN(int i)
+        #endregion
+        #region Methods
+        static long getFibonacciN(int i)
         {
             double x = 1.0 / Math.Sqrt(5.0);
             double y = (1.0 + Math.Sqrt(5.0)) / 2.0;
             double z = (1.0 - Math.Sqrt(5.0)) / 2.0;
-            return (int)Math.Round(x * (Math.Pow(y, i) - Math.Pow(z, i)));
+            return (long)Math.Round(x * (Math.Pow(y, i) - Math.Pow(z, i)));
         }
         public void findFiByMulThread()
         {
@@ -76,7 +78,7 @@ namespace FibonacciProblem
             string str = "";
             for (int i = 0; i < _n; i++)
             {
-                str += Convert.ToString(a[i]) + " ";
+                str += Convert.ToString(this.a[i]) + " ";
             }
             return str;
         }

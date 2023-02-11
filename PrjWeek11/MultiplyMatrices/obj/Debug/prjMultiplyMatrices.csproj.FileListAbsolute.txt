@@ -1,0 +1,10 @@
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\bin\Debug\MultiplyMatrices.exe.config
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\bin\Debug\MultiplyMatrices.exe
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\bin\Debug\MultiplyMatrices.pdb
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\bin\Debug\FuntionsInheritance.exe
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\bin\Debug\FuntionsInheritance.pdb
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\bin\Debug\FuntionsInheritance.exe.config
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\obj\Debug\prjMultiplyMatrices.csproj.CoreCompileInputs.cache
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\obj\Debug\prjMultiplyMatrices.csproj.CopyComplete
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\obj\Debug\MultiplyMatrices.exe
+D:\Github\OOp\PrjWeek11\MultiplyMatrices\obj\Debug\MultiplyMatrices.pdb

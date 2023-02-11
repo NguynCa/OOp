@@ -13,8 +13,8 @@ namespace MultiplyMatrices
     {
         static void Main(string[] args)
         {
-            Matrix matA = new Matrix(180, 1000);
-            Matrix matB = new Matrix(1000, 200);
+            Matrix matA = new Matrix(100, 5000);
+            Matrix matB = new Matrix(5000, 20);
             Matrix result = new Matrix(matA.M, matB.N);
             matA.initializeObject(ref matA);
             matB.initializeObject(ref matB);
